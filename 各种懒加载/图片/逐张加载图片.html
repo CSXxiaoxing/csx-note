@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>逐张加载</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        -function(){
+            // 兼容IE
+            var objImg = new Image();
+            var arr=['./img/hanxin.jpeg', './img/hanxin02.jpeg', './img/lanlingwang.jpeg'];
+
+            -function Img(i){
+                if(arr.length-1 < i) return false;
+                objImg.src= arr[i];
+
+                objImg.onload = objImg.onreadystatechange = function(){
+                    if(!this.readyState || this.readyState=='loaded' || this.readyState=='complete'){
+
+                        // alert('图片的宽度为：'+objImg.width+'；图片的高度为：'+objImg.height);
+                        if (i==0) dom('#mypic').innerHTML=`<img src="${this.src}" />`;
+                        else {
+                            var img = document.createElement('img');
+                            img.src = this.src
+                            dom('#mypic').appendChild(img)
+                        }
+                        Img(++i)
+                    }
+
+                };
+            }(0)
+            var dom = n => document.querySelector(n)
+        }()
+    </script>
+
+    <div id="mypic">onloading……</div>
+    
+</body>
+</html>
