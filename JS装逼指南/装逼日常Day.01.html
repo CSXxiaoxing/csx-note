@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>装逼被打日常01</title>
+    <style type="text/css">
+        body{
+            margin: auto;
+            box-sizing: border-box;
+            background: #FFE7BA;
+            border: 5px solid #ccc;
+            max-width: 1000px;
+            height: 100vh;
+        }
+        #zb1 pre{
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin: 0;
+            padding: 18px 0 8px;
+            background: #515151;
+            color: #fff;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        #zb1 pre span{
+            color: #FFC125;
+        }
+        #zb1 .bg{
+            background: #FF8C69;
+            padding: 24px;
+        }
+        #zb1 #ack{
+            margin: 20px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="zb1">
+        <h2>1、单行写一个评级组件</h2>
+        <div id='ack'>
+            <!-- <input  type="range" name="points" min="0" max="5"/> -->
+            <input  type="number" name="points" min="0" max="5" value="5" />
+            <button id='ss'>试试</button><br />
+        </div>
+        <div class='bg'>
+            <pre>
+            xing为1就是一星~~最高五星~~
+            代码："★★★★★☆☆☆☆☆".slice(5 – xing, 10 – xing);
+            输出：<span></span>
+            </pre>
+        </div>
+        
+        <script type="text/javascript">
+        document.querySelector("#ss").onclick = function(){
+            var xing = this.previousElementSibling.value;
+            var span = document.querySelector(".bg>pre>span")
+            span.innerText = "★★★★★☆☆☆☆☆".slice(5 - xing, 10 - xing)
+        }
+        </script>
+    </div>
+    
+</body>
+</html>
