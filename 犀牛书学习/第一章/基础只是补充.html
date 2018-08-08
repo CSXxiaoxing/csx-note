@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            width: 80%;
+            max-width: 1200px;
+            min-width: 600px;
+            margin: 10px auto;
+            background: rgb(255, 231, 122);
+        }
+        body>div{
+            padding: 20px 15px;
+            border-radius: 30px;
+            border: solid 1px rgb(37, 39, 41);
+        }
+        pre{
+            border: 1px solid #000;
+            border-radius: 50px;
+            margin: 0;
+            padding: 18px 0 8px;
+            background: #515151;
+            color: #fff;
+            font-size: 18px;
+            line-height: 24px;
+        }
+        hr{
+            margin: 20px 0;
+            height: 10px;
+            background: rgb(23, 248, 211);
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>1、数组直接【】赋值</h3>
+        <img src="./img/a00.png" alt="">
+        <pre>
+            var a = [1, 2];
+            console.log(a)
+            a[2] = 5
+            a[5] = 77
+            console.log(a)
+        </pre>
+    </div>
+    <hr>
+    <div>
+        <h3>2、当 'two' > 'three'</h3>
+        <img src="./img/a01.jpg" alt="">
+        <pre>
+            console.log('two' == 'three')
+            console.log('two' > 'three')
+            // 原因是tw在字母表中的索引大于th
+        </pre>
+    </div>
+    <hr>
+    <div>
+        <h3>3、this指向及Math的两个方法[.sqrt(), .pow()]（平方根，次方）</h3>
+        <img src="./img/a02.jpg" alt="">
+        <pre>
+            var p = [
+                {x: 0, y: 0},
+                {x: 1, y: 1}
+            ];
+            p.dist = function(){
+                var p1 = this[0];
+                console.log(p1)
+                // this指向调用者，p调用dist方法，所以p是调用者
+            
+                var p2 = this[1];
+                var a = p2.x - p1.x;
+                var b = p2.y - p1.y;
+            
+                console.log(Math.pow(2, 3)) // 补充：.pow(底数, 幕数)求次方
+                return Math.sqrt(a*a + b*b);    // sqrt是求平方根
+            }
+            p.dist()
+        </pre>
+    </div>
+    <hr>
+</body>
+</html>
