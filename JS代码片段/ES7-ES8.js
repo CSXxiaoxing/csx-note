@@ -137,8 +137,8 @@ function noRun(){
 
 var a,b=6
 var c = b;
-
+var Ω = 666;
 !function(){
-    console.log(c)
+    console.log(Ω)
 }()
 

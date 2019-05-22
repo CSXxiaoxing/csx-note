@@ -1,0 +1,1 @@
+// $('.btnclose')[0].parentNode.style.display = 'none'

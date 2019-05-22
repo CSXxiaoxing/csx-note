@@ -1,0 +1,27 @@
+<!--index.wxml-->
+<view class="container">
+<view class="userinfo">
+
+  <view >
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+
+    <view class="test111" >
+      <!-- <cover-view  style="height:100%;width:100%;background-color:rgba(0,0,0,0.8);z-index: -998;margin-top:600rpx;">
+      </cover-view> -->
+      <cover-image src="../../img/a.jpg">
+      </cover-image>
+    </view>
+
+  </view>
+
+
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  </view>
+</view>
